@@ -11,21 +11,20 @@ In this exercise, you will build a react app that fetches a random user from an 
 
 ## Fetch a User
 
-When the App component loads, make a request to `https://api.randomuser.me/` to fetch data about a random user. Store that user's information in state under the key `currentUser`. Render some information about them on the page.
+When the App component loads, make a request to `https://api.randomuser.me/` to fetch data about a random user. Store that user's information in state under the variable `currentUser`. Render some information about them on the page.
 
 ## Display Some User Data
 
-- Add a `UserSummary` component.  Make it a class component
-- `UserSummary` should take a single prop, `userData`.  Import it and use it inside the App component.  Pass `this.state.currentUser` to `UserSummary` as a `userData` prop, i.e., `<UserSummary userData={this.state.currentUser} />`
+- Add a `UserSummary` component.
+- `UserSummary` should take a single prop, `userData`.  Import it and use it inside the App component.  Pass `currentUser` to `UserSummary` as a `userData` prop, i.e., `<UserSummary userData={currentUser} />`
 - Inside the `UserSummary` component, if the `userData` prop is null, render a message saying "there is no user data"
 - *else* if UserData is not null, render the user's name, and email
 
 ## More or Less
 
 - Inside `UserSummary`, add a state variable `showMore` with an initial value of `false`
-- Add a button to `UserSummary` that calls a method to toggle `showMore` to be true if is false and flip it to false if it is true.  Remember to use the version of `setState` that takes a callback, i.e., `setState(prevState => { ...`
+- Add a button to `UserSummary` that calls a method to toggle `showMore` to be true if is false and flip it to false if it is true.
 - Adjust the component so that if `showMore` is true, then the user's name, email, street, city, state, and username are displayed.  If `showMore` is false, just show the name and email as before
-
 
 ### Bonus
 
