@@ -4,12 +4,12 @@ import axios from 'axios';
 import UserSummary from './UserSummary';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState([]);
   useEffect(() => {
     const userUrl = "https://api.randomuser.me/"
     const getUser = async () => {
       const res = await axios.get(userUrl);
-      setCurrentUser(res.data);
+      setCurrentUser(res.data.results[0]);
     }
     getUser();
   }, []);
